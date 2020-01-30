@@ -52,8 +52,8 @@ function hoursWorkedOnDate(date) {
     return hourOut - hourIn
 }
 
-function wagesEarnedOnDate(employee, date) {
-    return hoursWorkedOnDate(employee, date) * employee.payPerHour
+function wagesEarnedOnDate(date) {
+    return hoursWorkedOnDate(date) * this.payPerHour
 }
 
 let allWagesFor = function () {
@@ -66,14 +66,6 @@ let allWagesFor = function () {
     }.bind(this), 0) // <== Hm, why did we need to add bind() there? We'll discuss soon!
 
     return payable
-}
-
-function allWagesFor(employee) {
-    let wages = employee.timeInEvents.map(event => {
-        return wagesEarnedOnDate(employee, event.date)
-    })
-
-    return wages.reduce((total, wage) => total + wage, 0)
 }
 
 function calculatePayroll(employees) {
