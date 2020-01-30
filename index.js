@@ -68,3 +68,19 @@ let allWagesFor = function () {
     return payable
 }
 
+function allWagesFor(employee) {
+    let wages = employee.timeInEvents.map(event => {
+        return wagesEarnedOnDate(employee, event.date)
+    })
+
+    return wages.reduce((total, wage) => total + wage, 0)
+}
+
+function calculatePayroll(employees) {
+    let employeeWage = employees.map(allWagesFor)
+    return employeeWage.reduce((total, wage) => total + wage, 0)
+}
+
+function findEmployeeByFirstName(employees, name) {
+    return employees.find(emp => emp.firstName === name)
+}
