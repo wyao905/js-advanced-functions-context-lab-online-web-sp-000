@@ -68,8 +68,8 @@ let allWagesFor = function () {
     return payable
 }
 
-function calculatePayroll(employees) {
-    let employeeWage = employees.map(allWagesFor)
+function calculatePayroll(records) {
+    let employeeWages = records.map(allWagesFor)
     return employeeWage.reduce((total, wage) => total + wage, 0)
 }
 
