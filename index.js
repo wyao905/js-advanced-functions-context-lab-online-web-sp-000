@@ -35,15 +35,15 @@ function createTimeInEvent(timeString) {
     return this
 }
 
-function createTimeOutEvent(employee, timeString) {
+function createTimeOutEvent(timeString) {
     let outdate = timeString.split(" ")[0]
     let outtime = timeString.split(" ")[1]
-    employee.timeOutEvents.push({
+    this.timeOutEvents.push({
         type: "TimeOut",
         hour: parseInt(outtime),
         date: outdate
     })
-    return employee
+    return this
 }
 
 function hoursWorkedOnDate(employee, date) {
