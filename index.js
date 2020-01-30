@@ -24,15 +24,15 @@ function createEmployeeRecords(employees) {
     return employees.map(createEmployeeRecord)
 }
 
-function createTimeInEvent(employee, timeString) {
+function createTimeInEvent(timeString) {
     let indate = timeString.split(" ")[0]
     let intime = timeString.split(" ")[1]
-    employee.timeInEvents.push({
+    this.timeInEvents.push({
         type: "TimeIn",
         hour: parseInt(intime),
         date: indate
     })
-    return employee
+    return this
 }
 
 function createTimeOutEvent(employee, timeString) {
