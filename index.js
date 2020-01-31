@@ -69,7 +69,7 @@ let allWagesFor = function () {
 }
 
 function calculatePayroll(records) {
-    employeeWages.foreach = records.map(allWagesFor)
+    let employeeWages = records.forEach(allWagesFor)
     return employeeWage.reduce((total, wage) => total + wage, 0)
 }
 
